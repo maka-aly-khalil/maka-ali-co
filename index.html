@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شركة مكة علي - لإلحاق العمالة المصرية بالخارج</title>
   <link rel="icon" href="logo.jpg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS (we will swap RTL/LTR via JS) -->
+  <link id="bsCss"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,22 +18,33 @@
 <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="light">
   <div class="container">
     <a class="navbar-brand brand d-flex align-items-center gap-2" href="index.html">
-      <img src="logo.jpg" alt="شعار شركة مكة علي" width="38" height="38">
+      <img src="logo.jpg"
+           width="38" height="38"
+           alt="شعار شركة مكة علي"
+           data-i18n-attr="alt:logo_alt">
       <span class="brand-text">
-        شركة مكة علي
-        <small class="brand-sub">لإلحاق العمالة المصرية بالخارج</small>
+        <span data-i18n="company_name">شركة مكة علي</span>
+        <small class="brand-sub" data-i18n="company_sub">لإلحاق العمالة المصرية بالخارج</small>
       </span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="فتح القائمة">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-flex align-items-center gap-2">
+      <!-- Language Toggle -->
+      <button id="langToggle" class="btn btn-sm btn-outline-primary" type="button">EN</button>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-label="فتح القائمة"
+              data-i18n-attr="aria-label:nav_open">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">عنّا</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">التواصل</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">عنّا</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">التواصل</a></li>
       </ul>
     </div>
   </div>
@@ -41,36 +57,39 @@
 
       <div class="col-lg-7">
         <div class="mb-2">
-          <span class="badge-soft">رقم الترخيص: <strong>1405</strong></span>
+          <span class="badge-soft">
+            <span data-i18n="license_label">رقم الترخيص:</span>
+            <strong>1405</strong>
+          </span>
         </div>
 
-        <h1 class="hero-title mb-3">نحن حليفك للنجاح</h1>
+        <h1 class="hero-title mb-3" data-i18n="hero_title">نحن حليفك للنجاح</h1>
 
-        <p class="small-muted mb-4">
+        <p class="small-muted mb-4" data-i18n="hero_desc">
           شركة مكة علي تقدم خدمات ترشيح وتوفير الكوادر المناسبة وفق احتياجات جهة العمل،
           مع تنظيم البيانات والمتابعة لتسهيل الإجراءات.
         </p>
 
         <div class="d-flex gap-2 flex-wrap">
-          <a class="btn btn-primary" href="contact.html">تواصل معنا الآن</a>
-          <a class="btn btn-outline-primary" href="about.html">اعرف المزيد</a>
+          <a class="btn btn-primary" href="contact.html" data-i18n="hero_cta_primary">تواصل معنا الآن</a>
+          <a class="btn btn-outline-primary" href="about.html" data-i18n="hero_cta_secondary">اعرف المزيد</a>
         </div>
       </div>
 
       <div class="col-lg-5">
         <div class="card p-4 hero-card">
-          <h5 class="mb-2">لماذا شركة مكة علي؟</h5>
-          <p class="small-muted mb-3">خدمة منظمة، متابعة مستمرة، والتزام بالإجراءات الرسمية.</p>
+          <h5 class="mb-2" data-i18n="why_title">لماذا شركة مكة علي؟</h5>
+          <p class="small-muted mb-3" data-i18n="why_desc">خدمة منظمة، متابعة مستمرة، والتزام بالإجراءات الرسمية.</p>
 
           <div class="row g-2">
-            <div class="col-6"><div class="mini-pill">ترشيح مناسب</div></div>
-            <div class="col-6"><div class="mini-pill">تنظيم بيانات</div></div>
-            <div class="col-6"><div class="mini-pill">تنسيق مقابلات</div></div>
-            <div class="col-6"><div class="mini-pill">متابعة بعد السفر</div></div>
+            <div class="col-6"><div class="mini-pill" data-i18n="pill_1">ترشيح مناسب</div></div>
+            <div class="col-6"><div class="mini-pill" data-i18n="pill_2">تنظيم بيانات</div></div>
+            <div class="col-6"><div class="mini-pill" data-i18n="pill_3">تنسيق مقابلات</div></div>
+            <div class="col-6"><div class="mini-pill" data-i18n="pill_4">متابعة بعد السفر</div></div>
           </div>
 
           <div class="d-grid gap-2 mt-3">
-            <a class="btn btn-light border" href="contact.html">التفاصيل ووسائل التواصل</a>
+            <a class="btn btn-light border" href="contact.html" data-i18n="hero_card_btn">التفاصيل ووسائل التواصل</a>
           </div>
         </div>
       </div>
@@ -83,41 +102,41 @@
 <section class="section section-white">
   <div class="container py-5">
     <div class="text-center mb-4">
-      <h2 class="section-title mb-2">خدماتنا المتميزة</h2>
-      <div class="small-muted">ترشيح - تنظيم - تنسيق ومتابعة</div>
+      <h2 class="section-title mb-2" data-i18n="services_title">خدماتنا المتميزة</h2>
+      <div class="small-muted" data-i18n="services_sub">ترشيح - تنظيم - تنسيق ومتابعة</div>
     </div>
 
     <div class="row g-3 justify-content-center">
       <div class="col-md-6 col-lg-4">
         <div class="card p-4 h-100 feature-card">
-          <h5 class="mb-2">ترشيح كوادر مناسبة</h5>
-          <p class="small-muted mb-0">اختيار المرشحين حسب التخصص والخبرة المطلوبة.</p>
+          <h5 class="mb-2" data-i18n="service_1_title">ترشيح كوادر مناسبة</h5>
+          <p class="small-muted mb-0" data-i18n="service_1_desc">اختيار المرشحين حسب التخصص والخبرة المطلوبة.</p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
         <div class="card p-4 h-100 feature-card">
-          <h5 class="mb-2">تنظيم البيانات</h5>
-          <p class="small-muted mb-0">تجميع المعلومات بشكل واضح لتسهيل المراجعة والمتابعة.</p>
+          <h5 class="mb-2" data-i18n="service_2_title">تنظيم البيانات</h5>
+          <p class="small-muted mb-0" data-i18n="service_2_desc">تجميع المعلومات بشكل واضح لتسهيل المراجعة والمتابعة.</p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-4">
         <div class="card p-4 h-100 feature-card">
-          <h5 class="mb-2">تنسيق ومتابعة</h5>
-          <p class="small-muted mb-0">تنسيق التواصل والمقابلات حسب احتياج جهة العمل.</p>
+          <h5 class="mb-2" data-i18n="service_3_title">تنسيق ومتابعة</h5>
+          <p class="small-muted mb-0" data-i18n="service_3_desc">تنسيق التواصل والمقابلات حسب احتياج جهة العمل.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROFILE / SLIDER (اختياري) -->
+<!-- PROFILE / SLIDER -->
 <section class="section section-slate">
   <div class="container py-5">
     <div class="text-center mb-4">
-      <h2 class="section-title mb-2">بروفايل الشركة</h2>
-      <div class="small-muted">صور تعريفية عن الشركة وخدماتها</div>
+      <h2 class="section-title mb-2" data-i18n="profile_title">بروفايل الشركة</h2>
+      <div class="small-muted" data-i18n="profile_sub">صور تعريفية عن الشركة وخدماتها</div>
     </div>
 
     <div id="companySlider"
@@ -148,46 +167,46 @@
 
       <button class="carousel-control-prev" type="button" data-bs-target="#companySlider" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">السابق</span>
+        <span class="visually-hidden" data-i18n="prev">السابق</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#companySlider" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">التالي</span>
+        <span class="visually-hidden" data-i18n="next">التالي</span>
       </button>
     </div>
   </div>
 </section>
 
-<!-- ORANGE STRIP / CTA -->
+<!-- CTA -->
 <section class="section section-brand">
   <div class="container py-5 position-relative">
     <div class="text-center text-white mb-4">
-      <h2 class="mb-2">هل تبحث عن كوادر متميزة؟</h2>
-      <div class="cta-sub">تواصل معنا الآن وحدد احتياجك، وسنرد عليك في أقرب وقت.</div>
+      <h2 class="mb-2" data-i18n="cta_title">هل تبحث عن كوادر متميزة؟</h2>
+      <div class="cta-sub" data-i18n="cta_sub">تواصل معنا الآن وحدد احتياجك، وسنرد عليك في أقرب وقت.</div>
     </div>
 
     <div class="card p-4 cta-card mx-auto">
-      <h5 class="mb-3 text-center">إرسال رسالة (إيميل)</h5>
+      <h5 class="mb-3 text-center" data-i18n="form_title">إرسال رسالة (إيميل)</h5>
 
       <form onsubmit="sendMail(event)">
         <div class="mb-3">
-          <label class="form-label">الاسم</label>
-          <input id="n" class="form-control" required>
+          <label class="form-label" data-i18n="label_name">الاسم</label>
+          <input id="n" class="form-control" required data-i18n-attr="placeholder:ph_name" placeholder="الاسم">
         </div>
 
         <div class="mb-3">
-          <label class="form-label">رقم الهاتف</label>
-          <input id="p" class="form-control" required>
+          <label class="form-label" data-i18n="label_phone">رقم الهاتف</label>
+          <input id="p" class="form-control" required data-i18n-attr="placeholder:ph_phone" placeholder="رقم الهاتف">
         </div>
 
         <div class="mb-3">
-          <label class="form-label">الرسالة</label>
-          <textarea id="m" class="form-control" rows="4" required></textarea>
+          <label class="form-label" data-i18n="label_msg">الرسالة</label>
+          <textarea id="m" class="form-control" rows="4" required data-i18n-attr="placeholder:ph_msg" placeholder="اكتب رسالتك هنا"></textarea>
         </div>
 
-        <button class="btn btn-dark w-100" type="submit">إرسال</button>
+        <button class="btn btn-dark w-100" type="submit" data-i18n="send_btn">إرسال</button>
 
-        <div class="small-muted mt-3 text-center">
+        <div class="small-muted mt-3 text-center" data-i18n-html="or_contact_page">
           أو تواصل من صفحة <a href="contact.html">التواصل</a>
         </div>
       </form>
@@ -195,59 +214,255 @@
   </div>
 </section>
 
-<!-- FOOTER STRIP -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container py-5">
     <div class="row g-4">
 
       <div class="col-lg-4">
-        <div class="footer-title">شركة مكة علي</div>
-        <div class="footer-text">
+        <div class="footer-title" data-i18n="company_name">شركة مكة علي</div>
+        <div class="footer-text" data-i18n="footer_about">
           شركة متخصصة في إلحاق العمالة المصرية بالخارج، وتقديم حلول ترشيح وتنظيم بيانات
           وتنسيق ومتابعة وفق احتياجات جهة العمل.
         </div>
       </div>
 
       <div class="col-lg-4">
-        <div class="footer-title">روابط سريعة</div>
+        <div class="footer-title" data-i18n="quick_links">روابط سريعة</div>
         <ul class="footer-links">
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عنّا</a></li>
-          <li><a href="contact.html">التواصل</a></li>
+          <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav_about">عنّا</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">التواصل</a></li>
         </ul>
       </div>
 
       <div class="col-lg-4">
-        <div class="footer-title">بيانات التواصل</div>
+        <div class="footer-title" data-i18n="contact_info">بيانات التواصل</div>
         <div class="footer-text">
           <div class="mb-2">
-            <strong>العنوان:</strong>
-            <a href="https://maps.app.goo.gl/FWZMEJR97qbnwWXJA" target="_blank" rel="noopener">
+            <strong data-i18n="address_label">العنوان:</strong>
+            <a href="https://maps.app.goo.gl/FWZMEJR97qbnwWXJA" target="_blank" rel="noopener" data-i18n="address_value">
               40 شارع اللبيني، فيصل، أعلى سوبر ماركت بيم، الجيزة
             </a>
           </div>
 
-          <div class="mb-1"><strong>هاتف 1:</strong> <a href="tel:01102360427">01102360427</a></div>
-          <div class="mb-1"><strong>هاتف 2:</strong> <a href="tel:01229012936">01229012936</a></div>
-          <div class="mb-1"><strong>هاتف 3:</strong> <a href="tel:01002146386">01002146386</a></div>
-          <div class="mb-2"><strong>هاتف 4:</strong> <a href="tel:01003438784">01003438784</a></div>
+          <div class="mb-1"><strong data-i18n="phone1">هاتف 1:</strong> <a href="tel:01102360427">01102360427</a></div>
+          <div class="mb-1"><strong data-i18n="phone2">هاتف 2:</strong> <a href="tel:01229012936">01229012936</a></div>
+          <div class="mb-1"><strong data-i18n="phone3">هاتف 3:</strong> <a href="tel:01002146386">01002146386</a></div>
+          <div class="mb-2"><strong data-i18n="phone4">هاتف 4:</strong> <a href="tel:01003438784">01003438784</a></div>
 
-          <div class="mb-2"><strong>ساعات العمل:</strong> السبت - الخميس | 9 صباحًا - 5 مساءً</div>
+          <div class="mb-2"><strong data-i18n="hours_label">ساعات العمل:</strong> <span data-i18n="hours_value">السبت - الخميس | 9 صباحًا - 5 مساءً</span></div>
         </div>
       </div>
 
     </div>
 
     <div class="footer-bottom mt-4 pt-3">
-      <div>© <span id="year"></span> شركة مكة علي</div>
-      <div class="footer-muted">رقم الترخيص: 1405</div>
+      <div>© <span id="year"></span> <span data-i18n="company_name">شركة مكة علي</span></div>
+      <div class="footer-muted"><span data-i18n="license_label">رقم الترخيص:</span> 1405</div>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // --- i18n dictionary ---
+  const translations = {
+    ar: {
+      page_title: "شركة مكة علي - لإلحاق العمالة المصرية بالخارج",
+      logo_alt: "شعار شركة مكة علي",
+      nav_open: "فتح القائمة",
+
+      company_name: "شركة مكة علي",
+      company_sub: "لإلحاق العمالة المصرية بالخارج",
+
+      nav_home: "الرئيسية",
+      nav_about: "عنّا",
+      nav_contact: "التواصل",
+
+      license_label: "رقم الترخيص:",
+
+      hero_title: "نحن حليفك للنجاح",
+      hero_desc: "شركة مكة علي تقدم خدمات ترشيح وتوفير الكوادر المناسبة وفق احتياجات جهة العمل، مع تنظيم البيانات والمتابعة لتسهيل الإجراءات.",
+      hero_cta_primary: "تواصل معنا الآن",
+      hero_cta_secondary: "اعرف المزيد",
+
+      why_title: "لماذا شركة مكة علي؟",
+      why_desc: "خدمة منظمة، متابعة مستمرة، والتزام بالإجراءات الرسمية.",
+      pill_1: "ترشيح مناسب",
+      pill_2: "تنظيم بيانات",
+      pill_3: "تنسيق مقابلات",
+      pill_4: "متابعة بعد السفر",
+      hero_card_btn: "التفاصيل ووسائل التواصل",
+
+      services_title: "خدماتنا المتميزة",
+      services_sub: "ترشيح - تنظيم - تنسيق ومتابعة",
+      service_1_title: "ترشيح كوادر مناسبة",
+      service_1_desc: "اختيار المرشحين حسب التخصص والخبرة المطلوبة.",
+      service_2_title: "تنظيم البيانات",
+      service_2_desc: "تجميع المعلومات بشكل واضح لتسهيل المراجعة والمتابعة.",
+      service_3_title: "تنسيق ومتابعة",
+      service_3_desc: "تنسيق التواصل والمقابلات حسب احتياج جهة العمل.",
+
+      profile_title: "بروفايل الشركة",
+      profile_sub: "صور تعريفية عن الشركة وخدماتها",
+      prev: "السابق",
+      next: "التالي",
+
+      cta_title: "هل تبحث عن كوادر متميزة؟",
+      cta_sub: "تواصل معنا الآن وحدد احتياجك، وسنرد عليك في أقرب وقت.",
+      form_title: "إرسال رسالة (إيميل)",
+      label_name: "الاسم",
+      label_phone: "رقم الهاتف",
+      label_msg: "الرسالة",
+      ph_name: "الاسم",
+      ph_phone: "رقم الهاتف",
+      ph_msg: "اكتب رسالتك هنا",
+      send_btn: "إرسال",
+      or_contact_page: 'أو تواصل من صفحة <a href="contact.html">التواصل</a>',
+
+      footer_about: "شركة متخصصة في إلحاق العمالة المصرية بالخارج، وتقديم حلول ترشيح وتنظيم بيانات وتنسيق ومتابعة وفق احتياجات جهة العمل.",
+      quick_links: "روابط سريعة",
+      contact_info: "بيانات التواصل",
+      address_label: "العنوان:",
+      address_value: "40 شارع اللبيني، فيصل، أعلى سوبر ماركت بيم، الجيزة",
+      phone1: "هاتف 1:",
+      phone2: "هاتف 2:",
+      phone3: "هاتف 3:",
+      phone4: "هاتف 4:",
+      hours_label: "ساعات العمل:",
+      hours_value: "السبت - الخميس | 9 صباحًا - 5 مساءً",
+
+      mail_subject: "رسالة من موقع شركة مكة علي",
+      mail_body: ({name, phone, msg}) => `الاسم: ${name}\nالهاتف: ${phone}\n\n${msg}`
+    },
+
+    en: {
+      page_title: "Maka Ali Company - Egyptian Manpower Recruitment Abroad",
+      logo_alt: "Maka Ali Company Logo",
+      nav_open: "Open menu",
+
+      company_name: "Maka Ali Company",
+      company_sub: "Egyptian Manpower Recruitment Abroad",
+
+      nav_home: "Home",
+      nav_about: "About",
+      nav_contact: "Contact",
+
+      license_label: "License No.:",
+
+      hero_title: "Your Partner for Success",
+      hero_desc: "Maka Ali Company provides candidate nomination and staffing services tailored to employer needs, with organized data handling and follow-up to streamline procedures.",
+      hero_cta_primary: "Contact Us Now",
+      hero_cta_secondary: "Learn More",
+
+      why_title: "Why Maka Ali Company?",
+      why_desc: "Organized service, continuous follow-up, and full commitment to official procedures.",
+      pill_1: "Right Candidates",
+      pill_2: "Data Organization",
+      pill_3: "Interview Coordination",
+      pill_4: "Post-Travel Follow-up",
+      hero_card_btn: "Details & Contact Info",
+
+      services_title: "Our Services",
+      services_sub: "Nomination - Organization - Coordination & Follow-up",
+      service_1_title: "Candidate Nomination",
+      service_1_desc: "Selecting candidates based on the required specialty and experience.",
+      service_2_title: "Data Organization",
+      service_2_desc: "Collecting information clearly to simplify review and follow-up.",
+      service_3_title: "Coordination & Follow-up",
+      service_3_desc: "Coordinating communication and interviews based on employer needs.",
+
+      profile_title: "Company Profile",
+      profile_sub: "Overview photos of the company and its services",
+      prev: "Previous",
+      next: "Next",
+
+      cta_title: "Looking for outstanding candidates?",
+      cta_sub: "Contact us and share your requirements. We will get back to you as soon as possible.",
+      form_title: "Send a Message (Email)",
+      label_name: "Name",
+      label_phone: "Phone Number",
+      label_msg: "Message",
+      ph_name: "Name",
+      ph_phone: "Phone Number",
+      ph_msg: "Write your message here",
+      send_btn: "Send",
+      or_contact_page: 'Or reach us via the <a href="contact.html">Contact</a> page',
+
+      footer_about: "A company specialized in Egyptian manpower recruitment abroad, providing nomination, data organization, coordination, and follow-up solutions tailored to employer needs.",
+      quick_links: "Quick Links",
+      contact_info: "Contact Information",
+      address_label: "Address:",
+      address_value: "40 Al-Lebini St., Faisal, above BIM Supermarket, Giza",
+      phone1: "Phone 1:",
+      phone2: "Phone 2:",
+      phone3: "Phone 3:",
+      phone4: "Phone 4:",
+      hours_label: "Working Hours:",
+      hours_value: "Saturday - Thursday | 9:00 AM - 5:00 PM",
+
+      mail_subject: "Message from Maka Ali Company Website",
+      mail_body: ({name, phone, msg}) => `Name: ${name}\nPhone: ${phone}\n\n${msg}`
+    }
+  };
+
+  function applyI18n(lang) {
+    // html lang/dir
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+
+    // swap Bootstrap RTL/LTR
+    const bs = document.getElementById("bsCss");
+    bs.href = (lang === "ar")
+      ? "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      : "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+
+    // title
+    document.title = translations[lang].page_title;
+
+    // text nodes
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      const val = translations[lang][key];
+      if (val !== undefined) el.textContent = val;
+    });
+
+    // html content (when element contains links)
+    document.querySelectorAll("[data-i18n-html]").forEach(el => {
+      const key = el.getAttribute("data-i18n-html");
+      const val = translations[lang][key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    // attributes (alt/aria-label/placeholder...)
+    document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+      const pairs = el.getAttribute("data-i18n-attr").split(",");
+      pairs.forEach(p => {
+        const [attr, key] = p.split(":").map(s => s.trim());
+        const val = translations[lang][key];
+        if (attr && key && val !== undefined) el.setAttribute(attr, val);
+      });
+    });
+
+    // button label
+    const btn = document.getElementById("langToggle");
+    if (btn) btn.textContent = (lang === "ar") ? "EN" : "AR";
+
+    localStorage.setItem("site_lang", lang);
+  }
+
+  // initial
+  applyI18n(localStorage.getItem("site_lang") || "ar");
+
+  // toggle
+  document.getElementById("langToggle")?.addEventListener("click", () => {
+    const current = document.documentElement.lang || "ar";
+    applyI18n(current === "ar" ? "en" : "ar");
+  });
 
   function sendMail(e){
     e.preventDefault();
@@ -255,8 +470,10 @@
     const phone = document.getElementById("p").value;
     const msg = document.getElementById("m").value;
 
-    const subject = encodeURIComponent("رسالة من موقع شركة مكة علي");
-    const body = encodeURIComponent(`الاسم: ${name}\nالهاتف: ${phone}\n\n${msg}`);
+    const lang = document.documentElement.lang || "ar";
+    const subject = encodeURIComponent(translations[lang].mail_subject);
+    const bodyText = translations[lang].mail_body({name, phone, msg});
+    const body = encodeURIComponent(bodyText);
 
     const to = "alikh831@gmail.com";
     const cc = "2ATravel2000@gmail.com";
