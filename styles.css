@@ -1,6 +1,6 @@
 :root{
   --brand: #c87412;
-  --brand2: #7a4a14;
+  --brand2: #8a4f12;
 
   --text: #111827;
   --muted: #6b7280;
@@ -12,6 +12,11 @@
   --shadow: 0 14px 35px rgba(17, 24, 39, .08);
 
   --radius: 18px;
+
+  --footer-bg: #0b1220;
+  --footer-border: rgba(255,255,255,.10);
+  --footer-text: rgba(255,255,255,.75);
+  --footer-link: rgba(255,255,255,.88);
 }
 
 *{ box-sizing: border-box; }
@@ -24,7 +29,6 @@ body{
   line-height: 1.7;
 }
 
-/* links */
 a{ color: var(--brand2); text-decoration: none; }
 a:hover{ color: var(--brand); text-decoration: underline; }
 
@@ -34,7 +38,7 @@ a:hover{ color: var(--brand); text-decoration: underline; }
   line-height: 1.9;
 }
 
-/* navbar */
+/* Navbar */
 .navbar{
   background: rgba(255,255,255,.92);
   backdrop-filter: blur(8px);
@@ -42,6 +46,19 @@ a:hover{ color: var(--brand); text-decoration: underline; }
 }
 .navbar-brand.brand{ font-weight: 900; letter-spacing: .2px; }
 .navbar-brand img{ border-radius: 10px; }
+
+.brand-text{
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand-sub{
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
 .navbar .nav-link{
   font-weight: 800;
   color: #111827;
@@ -62,132 +79,6 @@ a:hover{ color: var(--brand); text-decoration: underline; }
   background: var(--brand);
 }
 
-/* headings */
+/* Headings */
 h1,h2,h3,h4,h5{ color:#0f172a; font-weight: 900; }
-.hero-title{ font-size: clamp(1.8rem, 3vw, 2.8rem); }
-
-/* cards */
-.card{
-  background: var(--paper);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.card:hover{
-  transform: translateY(-1px);
-  transition: transform .15s ease;
-}
-
-/* buttons */
-.btn{ border-radius: 14px; font-weight: 800; }
-.btn-primary{ background: var(--brand) !important; border-color: var(--brand) !important; }
-.btn-outline-primary{ color: var(--brand) !important; border-color: var(--brand) !important; }
-.btn-outline-primary:hover{ background: var(--brand) !important; border-color: var(--brand) !important; color:#fff !important; }
-.btn-light.border{ border-color: var(--border) !important; }
-
-/* section system (زي الصورة) */
-.section{ position: relative; }
-.section-white{ background: #fff; }
-.section-slate{ background: #f2f4f8; }
-.section-hero{
-  background:
-    radial-gradient(1200px 520px at 12% 18%, rgba(200,116,18,.16), transparent 60%),
-    radial-gradient(900px 520px at 92% 20%, rgba(122,74,20,.12), transparent 55%),
-    #f2ede6;
-  border-bottom: 1px solid var(--border);
-}
-.section-brand{
-  background: var(--brand);
-  overflow: hidden;
-}
-.section-brand::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:.10;
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-  pointer-events:none;
-}
-
-.badge-soft{
-  display: inline-block;
-  background: #fff;
-  border: 1px solid var(--border);
-  color: var(--brand2);
-  padding: .45rem .7rem;
-  border-radius: 999px;
-}
-
-.section-title{
-  font-weight: 900;
-  display: inline-block;
-  position: relative;
-  padding-bottom: .6rem;
-}
-.section-title::after{
-  content:"";
-  position:absolute;
-  right:50%;
-  transform: translateX(50%);
-  bottom: 0;
-  width: 68px;
-  height: 3px;
-  background: var(--brand);
-  border-radius: 999px;
-}
-
-/* hero right card chips */
-.hero-card{ border: 2px solid rgba(0,0,0,.08); }
-.mini-pill{
-  background: rgba(200,116,18,.12);
-  border: 1px solid rgba(200,116,18,.18);
-  color: var(--brand2);
-  border-radius: 999px;
-  padding: .45rem .65rem;
-  font-weight: 800;
-  text-align: center;
-  font-size: .9rem;
-}
-
-/* feature card outline feel */
-.feature-card{
-  border-width: 2px;
-}
-
-/* carousel frame */
-.profile-frame{
-  max-width: 860px;
-  border-width: 2px;
-}
-.carousel img{
-  max-height: 560px;
-  object-fit: contain;
-  background: #000;
-}
-.carousel-indicators [data-bs-target]{
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-}
-.carousel-indicators .active{ background-color: var(--brand); }
-
-/* forms */
-.form-control{
-  border-radius: 14px;
-  border: 1px solid rgba(17, 24, 39, .14);
-  padding: .7rem .9rem;
-}
-.form-control:focus{
-  border-color: rgba(200,116,18,.65);
-  box-shadow: 0 0 0 .25rem rgba(200,116,18,.18);
-}
-
-/* CTA */
-.cta-card{ max-width: 560px; }
-.cta-sub{ opacity: .95; color: rgba(255,255,255,.92); }
-
-/* footer */
-footer{
-  background: var(--paper) !important;
-  border-top: 1px solid var(--border) !important;
-}
+.hero-title{ font-size: clamp(1.8rem, 3vw, 2.8
