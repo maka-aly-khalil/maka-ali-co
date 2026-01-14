@@ -146,11 +146,13 @@ h1,h2,h3,h4,h5{ color:#0f172a; font-weight: 900; }
   position: relative;
   padding-bottom: .6rem;
 }
+
+/* ✅ تعديل مهم عشان يشتغل في RTL و LTR */
 .section-title::after{
   content:"";
   position:absolute;
-  right:50%;
-  transform: translateX(50%);
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 68px;
   height: 3px;
