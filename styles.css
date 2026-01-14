@@ -1,13 +1,35 @@
 :root{
   --brand:#c87412;
   --brand-dark:#7a4a14;
+
+  --text:#1f2937;
+  --muted:#6c757d;
+
+  --bg:#f7f7f9;
+  --card-radius:16px;
 }
 
-body { background:#f7f7f9; }
-.brand { font-weight:800; letter-spacing:.2px; }
-.card { border: 0; box-shadow: 0 6px 20px rgba(0,0,0,.06); }
-.small-muted { color:#6c757d; font-size:.95rem; }
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+}
 
+.brand{
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+a{ color: var(--brand-dark); }
+a:hover{ color: var(--brand); }
+
+.small-muted{
+  color: var(--muted);
+  font-size:.95rem;
+  line-height: 1.8;
+}
+
+/* Buttons */
 .btn-primary{
   background:var(--brand) !important;
   border-color:var(--brand) !important;
@@ -18,25 +40,115 @@ body { background:#f7f7f9; }
 }
 .btn-outline-primary:hover{
   background:var(--brand) !important;
+  border-color:var(--brand) !important;
   color:#fff !important;
 }
 
-a { color: var(--brand-dark); }
-a:hover { color: var(--brand); }
+/* Card */
+.card{
+  border: 0;
+  border-radius: var(--card-radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
 
-.navbar-brand img{ border-radius:8px; }
+/* Navbar logo */
+.navbar-brand img{ border-radius: 10px; }
 
+/* Hero */
 .hero{
-  background: linear-gradient(135deg, rgba(200,116,18,.12), rgba(122,74,20,.06));
+  background: radial-gradient(1200px 500px at 15% 20%, rgba(200,116,18,.14), transparent 65%),
+              radial-gradient(900px 500px at 90% 30%, rgba(122,74,20,.10), transparent 55%),
+              #f3efe9;
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-/* سلايدر صور البروفايل */
+.hero-title{
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.badge-soft{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  color: var(--brand-dark);
+  padding: .45rem .7rem;
+  border-radius: 999px;
+}
+
+/* Hero right card */
+.hero-card{
+  border: 2px solid rgba(0,0,0,.08);
+}
+
+/* Section styling like screenshot */
+.section-alt{
+  background: #ffffff;
+}
+
+.section-title{
+  font-weight: 900;
+  display: inline-block;
+  position: relative;
+  padding-bottom: .5rem;
+}
+
+.section-title::after{
+  content:"";
+  position:absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 0;
+  width: 64px;
+  height: 3px;
+  background: var(--brand);
+  border-radius: 999px;
+}
+
+/* Feature cards */
+.feature-card{
+  border: 2px solid rgba(0,0,0,.10);
+}
+
+.feature-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(200,116,18,.14);
+  color: var(--brand-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Profile carousel like big centered frame */
+.profile-carousel{
+  max-width: 860px;
+  border: 2px solid rgba(0,0,0,.10);
+}
+
 .carousel img{
   max-height: 560px;
-  object-fit: contain; /* لو عايزها تملأ وتقص شوية: cover */
+  object-fit: contain;
   background: #000;
 }
+
+/* CTA section (orange block) */
+.cta{
+  background: var(--brand);
+}
+
+.cta-sub{
+  opacity: .95;
+}
+
+.cta-card{
+  max-width: 560px;
+  border: 2px solid rgba(0,0,0,.10);
+}
+
+/* Portfolio grid images (لو تستخدمها في portfolio.html) */
 .portfolio-img{
   aspect-ratio: 1 / 1;
   object-fit: cover;
