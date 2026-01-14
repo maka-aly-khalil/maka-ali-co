@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شركة مكة علي - عنّا</title>
   <link rel="icon" href="logo.jpg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS (we will swap RTL/LTR via JS) -->
+  <link id="bsCss"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,22 +18,33 @@
 <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="light">
   <div class="container">
     <a class="navbar-brand brand d-flex align-items-center gap-2" href="index.html">
-      <img src="logo.jpg" alt="شعار شركة مكة علي" width="38" height="38">
+      <img src="logo.jpg"
+           alt="شعار شركة مكة علي"
+           width="38" height="38"
+           data-i18n-attr="alt:logo_alt">
       <span class="brand-text">
-        شركة مكة علي
-        <small class="brand-sub">لإلحاق العمالة المصرية بالخارج</small>
+        <span data-i18n="company_name">شركة مكة علي</span>
+        <small class="brand-sub" data-i18n="company_sub">لإلحاق العمالة المصرية بالخارج</small>
       </span>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="فتح القائمة">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-flex align-items-center gap-2">
+      <!-- Language Toggle -->
+      <button id="langToggle" class="btn btn-sm btn-outline-primary" type="button">EN</button>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-label="فتح القائمة"
+              data-i18n-attr="aria-label:nav_open">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link active" href="about.html">عنّا</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">التواصل</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html" data-i18n="nav_about">عنّا</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="nav_contact">التواصل</a></li>
       </ul>
     </div>
   </div>
@@ -36,8 +52,8 @@
 
 <header class="section section-slate">
   <div class="container py-5 text-center">
-    <h1 class="mb-2">عن شركة مكة علي</h1>
-    <p class="small-muted mb-0 mx-auto about-intro">
+    <h1 class="mb-2" data-i18n="about_title">عن شركة مكة علي</h1>
+    <p class="small-muted mb-0 mx-auto about-intro" data-i18n-html="about_intro">
       شركة مكة علي متخصصة في <strong>إلحاق العمالة المصرية بالخارج</strong>،
       وتهدف إلى توفير كوادر مناسبة وفق احتياجات جهة العمل، مع تنظيم البيانات والتنسيق والمتابعة
       لتسهيل إجراءات التوظيف.
@@ -50,8 +66,8 @@
     <div class="row g-4">
       <div class="col-lg-6">
         <div class="card p-4 h-100">
-          <h5 class="mb-3">ما نقدمه</h5>
-          <ul class="mb-0">
+          <h5 class="mb-3" data-i18n="offer_title">ما نقدمه</h5>
+          <ul class="mb-0" data-i18n-html="offer_list">
             <li>استقبال احتياجات جهة العمل (التخصص/الخبرة/عدد العمالة).</li>
             <li>ترشيح مرشحين مناسبين وتجهيز بياناتهم بشكل منظم.</li>
             <li>تنسيق التواصل والمقابلات والمتابعة.</li>
@@ -62,8 +78,8 @@
 
       <div class="col-lg-6">
         <div class="card p-4 h-100">
-          <h5 class="mb-3">لماذا يختارنا عملاؤنا؟</h5>
-          <ul class="mb-0">
+          <h5 class="mb-3" data-i18n="why_clients_title">لماذا يختارنا عملاؤنا؟</h5>
+          <ul class="mb-0" data-i18n-html="why_clients_list">
             <li>خبرة طويلة في سوق العمل الخارجي.</li>
             <li>سرعة في التنفيذ.</li>
             <li>التزام كامل بالقوانين.</li>
@@ -75,12 +91,13 @@
     </div>
 
     <div class="card p-4 mt-4">
-      <h5 class="mb-3">أنواع العمالة التي قمنا بتوفيرها</h5>
+      <h5 class="mb-3" data-i18n="workforce_types_title">أنواع العمالة التي قمنا بتوفيرها</h5>
+
       <div class="row g-3">
         <div class="col-md-6 col-lg-3">
           <div class="card p-3 about-mini h-100">
-            <div class="fw-bold mb-2">عمالة فنية</div>
-            <ul class="mb-0">
+            <div class="fw-bold mb-2" data-i18n="type_tech_title">عمالة فنية</div>
+            <ul class="mb-0" data-i18n-html="type_tech_list">
               <li>كهربائيين</li><li>سباكين</li><li>لحامين</li><li>ميكانيكيين</li>
             </ul>
           </div>
@@ -88,8 +105,8 @@
 
         <div class="col-md-6 col-lg-3">
           <div class="card p-3 about-mini h-100">
-            <div class="fw-bold mb-2">عمالة إنشاءات</div>
-            <ul class="mb-0">
+            <div class="fw-bold mb-2" data-i18n="type_construction_title">عمالة إنشاءات</div>
+            <ul class="mb-0" data-i18n-html="type_construction_list">
               <li>عمال بناء</li><li>حدادين</li><li>نجارين مسلح</li>
             </ul>
           </div>
@@ -97,8 +114,8 @@
 
         <div class="col-md-6 col-lg-3">
           <div class="card p-3 about-mini h-100">
-            <div class="fw-bold mb-2">عمالة خدمة</div>
-            <ul class="mb-0">
+            <div class="fw-bold mb-2" data-i18n="type_service_title">عمالة خدمة</div>
+            <ul class="mb-0" data-i18n-html="type_service_list">
               <li>فنادق ومنتجعات</li><li>مطاعم وكافيهات</li><li>عمال نظافة</li>
             </ul>
           </div>
@@ -106,8 +123,8 @@
 
         <div class="col-md-6 col-lg-3">
           <div class="card p-3 about-mini h-100">
-            <div class="fw-bold mb-2">عمالة متخصصة</div>
-            <ul class="mb-0">
+            <div class="fw-bold mb-2" data-i18n="type_specialized_title">عمالة متخصصة</div>
+            <ul class="mb-0" data-i18n-html="type_specialized_list">
               <li>مهندسين</li><li>محاسبين</li><li>مشرفين مواقع</li>
             </ul>
           </div>
@@ -118,8 +135,8 @@
     <div class="row g-4 mt-1">
       <div class="col-lg-7">
         <div class="card p-4 h-100">
-          <h5 class="mb-3">إجراءاتنا القانونية</h5>
-          <ul class="mb-0">
+          <h5 class="mb-3" data-i18n="legal_title">إجراءاتنا القانونية</h5>
+          <ul class="mb-0" data-i18n-html="legal_list">
             <li>الالتزام بكافة القوانين واللوائح.</li>
             <li>توثيق العقود.</li>
             <li>الفحوصات الطبية المعتمدة.</li>
@@ -131,24 +148,24 @@
 
       <div class="col-lg-5">
         <div class="card p-4 h-100">
-          <h5 class="mb-3">أرقام وإنجازات</h5>
+          <h5 class="mb-3" data-i18n="stats_title">أرقام وإنجازات</h5>
           <div class="row g-3">
             <div class="col-12">
               <div class="card p-3 about-stat">
                 <div class="fw-bold">+8000</div>
-                <div class="small-muted">عامل تم إلحاقهم بالخارج</div>
+                <div class="small-muted" data-i18n="stat_1">عامل تم إلحاقهم بالخارج</div>
               </div>
             </div>
             <div class="col-12">
               <div class="card p-3 about-stat">
                 <div class="fw-bold">+15</div>
-                <div class="small-muted">جهة خارجية تم التعامل معها</div>
+                <div class="small-muted" data-i18n="stat_2">جهة خارجية تم التعامل معها</div>
               </div>
             </div>
             <div class="col-12">
               <div class="card p-3 about-stat">
                 <div class="fw-bold">%95</div>
-                <div class="small-muted">نسبة رضا العملاء</div>
+                <div class="small-muted" data-i18n="stat_3">نسبة رضا العملاء</div>
               </div>
             </div>
           </div>
@@ -157,8 +174,8 @@
     </div>
 
     <div class="card p-4 mt-4">
-      <h5 class="mb-3">خطوات العمل معنا</h5>
-      <ol class="mb-0">
+      <h5 class="mb-3" data-i18n="steps_title">خطوات العمل معنا</h5>
+      <ol class="mb-0" data-i18n-html="steps_list">
         <li>استلام طلب صاحب العمل.</li>
         <li>تحديد الدولة والمهنة.</li>
         <li>اختيار العمالة المناسبة.</li>
@@ -169,15 +186,15 @@
     </div>
 
     <div class="card p-4 mt-4">
-      <h5 class="mb-2">شركاؤنا</h5>
-      <p class="mb-0">
+      <h5 class="mb-2" data-i18n="partners_title">شركاؤنا</h5>
+      <p class="mb-0" data-i18n-html="partners_text">
         نفخر بالتعاون والتعامل مع جهات كبرى، من بينها <strong>UCC</strong> وكذلك سلسلة مطاعم <strong>مشوار</strong>.
       </p>
     </div>
 
     <div class="card p-4 mt-4">
-      <h5 class="mb-2">تنويه</h5>
-      <div class="small-muted">
+      <h5 class="mb-2" data-i18n="note_title">تنويه</h5>
+      <div class="small-muted" data-i18n="note_text">
         يتم التعامل وفقًا لمتطلبات جهة العمل والإجراءات الرسمية الخاصة بالدولة المستقبلة.
       </div>
     </div>
@@ -189,51 +206,275 @@
   <div class="container py-5">
     <div class="row g-4">
       <div class="col-lg-4">
-        <div class="footer-title">شركة مكة علي</div>
-        <div class="footer-text">
+        <div class="footer-title" data-i18n="company_name">شركة مكة علي</div>
+        <div class="footer-text" data-i18n="footer_about">
           شركة متخصصة في إلحاق العمالة المصرية بالخارج، وتقديم حلول ترشيح وتنظيم بيانات
           وتنسيق ومتابعة وفق احتياجات جهة العمل.
         </div>
       </div>
 
       <div class="col-lg-4">
-        <div class="footer-title">روابط سريعة</div>
+        <div class="footer-title" data-i18n="quick_links">روابط سريعة</div>
         <ul class="footer-links">
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="about.html">عنّا</a></li>
-          <li><a href="contact.html">التواصل</a></li>
+          <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav_about">عنّا</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">التواصل</a></li>
         </ul>
       </div>
 
       <div class="col-lg-4">
-        <div class="footer-title">بيانات التواصل</div>
+        <div class="footer-title" data-i18n="contact_info">بيانات التواصل</div>
         <div class="footer-text">
           <div class="mb-2">
-            <strong>العنوان:</strong>
-            <a href="https://maps.app.goo.gl/FWZMEJR97qbnwWXJA" target="_blank" rel="noopener">
+            <strong data-i18n="address_label">العنوان:</strong>
+            <a href="https://maps.app.goo.gl/FWZMEJR97qbnwWXJA" target="_blank" rel="noopener" data-i18n="address_value">
               40 شارع اللبيني، فيصل، أعلى سوبر ماركت بيم، الجيزة
             </a>
           </div>
 
-          <div class="mb-1"><strong>هاتف 1:</strong> <a href="tel:01102360427">01102360427</a></div>
-          <div class="mb-1"><strong>هاتف 2:</strong> <a href="tel:01229012936">01229012936</a></div>
-          <div class="mb-1"><strong>هاتف 3:</strong> <a href="tel:01002146386">01002146386</a></div>
-          <div class="mb-2"><strong>هاتف 4:</strong> <a href="tel:01003438784">01003438784</a></div>
+          <div class="mb-1"><strong data-i18n="phone1">هاتف 1:</strong> <a href="tel:01102360427">01102360427</a></div>
+          <div class="mb-1"><strong data-i18n="phone2">هاتف 2:</strong> <a href="tel:01229012936">01229012936</a></div>
+          <div class="mb-1"><strong data-i18n="phone3">هاتف 3:</strong> <a href="tel:01002146386">01002146386</a></div>
+          <div class="mb-2"><strong data-i18n="phone4">هاتف 4:</strong> <a href="tel:01003438784">01003438784</a></div>
 
-          <div class="mb-2"><strong>ساعات العمل:</strong> السبت - الخميس | 9 صباحًا - 5 مساءً</div>
+          <div class="mb-2"><strong data-i18n="hours_label">ساعات العمل:</strong> <span data-i18n="hours_value">السبت - الخميس | 9 صباحًا - 5 مساءً</span></div>
         </div>
       </div>
     </div>
 
     <div class="footer-bottom mt-4 pt-3">
-      <div>© <span id="year"></span> شركة مكة علي</div>
-      <div class="footer-muted">رقم الترخيص: 1405</div>
+      <div>© <span id="year"></span> <span data-i18n="company_name">شركة مكة علي</span></div>
+      <div class="footer-muted"><span data-i18n="license_label">رقم الترخيص:</span> 1405</div>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const translations = {
+    ar: {
+      page_title: "شركة مكة علي - عنّا",
+      logo_alt: "شعار شركة مكة علي",
+      nav_open: "فتح القائمة",
+
+      company_name: "شركة مكة علي",
+      company_sub: "لإلحاق العمالة المصرية بالخارج",
+
+      nav_home: "الرئيسية",
+      nav_about: "عنّا",
+      nav_contact: "التواصل",
+
+      license_label: "رقم الترخيص:",
+      address_label: "العنوان:",
+      address_value: "40 شارع اللبيني، فيصل، أعلى سوبر ماركت بيم، الجيزة",
+      phone1: "هاتف 1:",
+      phone2: "هاتف 2:",
+      phone3: "هاتف 3:",
+      phone4: "هاتف 4:",
+      hours_label: "ساعات العمل:",
+      hours_value: "السبت - الخميس | 9 صباحًا - 5 مساءً",
+
+      about_title: "عن شركة مكة علي",
+      about_intro: 'شركة مكة علي متخصصة في <strong>إلحاق العمالة المصرية بالخارج</strong>، وتهدف إلى توفير كوادر مناسبة وفق احتياجات جهة العمل، مع تنظيم البيانات والتنسيق والمتابعة لتسهيل إجراءات التوظيف.',
+
+      offer_title: "ما نقدمه",
+      offer_list: `
+        <li>استقبال احتياجات جهة العمل (التخصص/الخبرة/عدد العمالة).</li>
+        <li>ترشيح مرشحين مناسبين وتجهيز بياناتهم بشكل منظم.</li>
+        <li>تنسيق التواصل والمقابلات والمتابعة.</li>
+        <li>مراجعة البيانات والتجهيزات المطلوبة قبل السفر حسب متطلبات جهة العمل.</li>
+      `,
+
+      why_clients_title: "لماذا يختارنا عملاؤنا؟",
+      why_clients_list: `
+        <li>خبرة طويلة في سوق العمل الخارجي.</li>
+        <li>سرعة في التنفيذ.</li>
+        <li>التزام كامل بالقوانين.</li>
+        <li>عمالة مدرّبة ومناسبة.</li>
+        <li>دعم مستمر بعد السفر.</li>
+      `,
+
+      workforce_types_title: "أنواع العمالة التي قمنا بتوفيرها",
+      type_tech_title: "عمالة فنية",
+      type_tech_list: "<li>كهربائيين</li><li>سباكين</li><li>لحامين</li><li>ميكانيكيين</li>",
+      type_construction_title: "عمالة إنشاءات",
+      type_construction_list: "<li>عمال بناء</li><li>حدادين</li><li>نجارين مسلح</li>",
+      type_service_title: "عمالة خدمة",
+      type_service_list: "<li>فنادق ومنتجعات</li><li>مطاعم وكافيهات</li><li>عمال نظافة</li>",
+      type_specialized_title: "عمالة متخصصة",
+      type_specialized_list: "<li>مهندسين</li><li>محاسبين</li><li>مشرفين مواقع</li>",
+
+      legal_title: "إجراءاتنا القانونية",
+      legal_list: `
+        <li>الالتزام بكافة القوانين واللوائح.</li>
+        <li>توثيق العقود.</li>
+        <li>الفحوصات الطبية المعتمدة.</li>
+        <li>استخراج التأشيرات.</li>
+        <li>التنسيق مع السفارات.</li>
+      `,
+
+      stats_title: "أرقام وإنجازات",
+      stat_1: "عامل تم إلحاقهم بالخارج",
+      stat_2: "جهة خارجية تم التعامل معها",
+      stat_3: "نسبة رضا العملاء",
+
+      steps_title: "خطوات العمل معنا",
+      steps_list: `
+        <li>استلام طلب صاحب العمل.</li>
+        <li>تحديد الدولة والمهنة.</li>
+        <li>اختيار العمالة المناسبة.</li>
+        <li>إجراء المقابلات.</li>
+        <li>إنهاء الإجراءات والسفر.</li>
+        <li>المتابعة بعد الوصول.</li>
+      `,
+
+      partners_title: "شركاؤنا",
+      partners_text: 'نفخر بالتعاون والتعامل مع جهات كبرى، من بينها <strong>UCC</strong> وكذلك سلسلة مطاعم <strong>مشوار</strong>.',
+
+      note_title: "تنويه",
+      note_text: "يتم التعامل وفقًا لمتطلبات جهة العمل والإجراءات الرسمية الخاصة بالدولة المستقبلة.",
+
+      footer_about: "شركة متخصصة في إلحاق العمالة المصرية بالخارج، وتقديم حلول ترشيح وتنظيم بيانات وتنسيق ومتابعة وفق احتياجات جهة العمل.",
+      quick_links: "روابط سريعة",
+      contact_info: "بيانات التواصل"
+    },
+
+    en: {
+      page_title: "Maka Ali Company - About",
+      logo_alt: "Maka Ali Company Logo",
+      nav_open: "Open menu",
+
+      company_name: "Maka Ali Company",
+      company_sub: "Egyptian Manpower Recruitment Abroad",
+
+      nav_home: "Home",
+      nav_about: "About",
+      nav_contact: "Contact",
+
+      license_label: "License No.:",
+      address_label: "Address:",
+      address_value: "40 Al-Lebini St., Faisal, above BIM Supermarket, Giza",
+      phone1: "Phone 1:",
+      phone2: "Phone 2:",
+      phone3: "Phone 3:",
+      phone4: "Phone 4:",
+      hours_label: "Working Hours:",
+      hours_value: "Saturday - Thursday | 9:00 AM - 5:00 PM",
+
+      about_title: "About Maka Ali Company",
+      about_intro: 'Maka Ali Company specializes in <strong>Egyptian manpower recruitment abroad</strong>. We aim to provide suitable candidates based on employer requirements, with organized data handling, coordination, and follow-up to simplify recruitment procedures.',
+
+      offer_title: "What We Provide",
+      offer_list: `
+        <li>Receiving employer requirements (specialization/experience/headcount).</li>
+        <li>Nominating suitable candidates and preparing their data in an organized way.</li>
+        <li>Coordinating communication, interviews, and follow-up.</li>
+        <li>Reviewing required documents and preparations before travel based on employer requirements.</li>
+      `,
+
+      why_clients_title: "Why Do Clients Choose Us?",
+      why_clients_list: `
+        <li>Long experience in overseas labor markets.</li>
+        <li>Fast execution.</li>
+        <li>Full compliance with laws and regulations.</li>
+        <li>Trained and suitable workforce.</li>
+        <li>Continuous support after travel.</li>
+      `,
+
+      workforce_types_title: "Workforce Types We Have Provided",
+      type_tech_title: "Technical Workforce",
+      type_tech_list: "<li>Electricians</li><li>Plumbers</li><li>Welders</li><li>Mechanics</li>",
+      type_construction_title: "Construction Workforce",
+      type_construction_list: "<li>Masons</li><li>Steel fixers</li><li>Formwork carpenters</li>",
+      type_service_title: "Service Workforce",
+      type_service_list: "<li>Hotels & Resorts</li><li>Restaurants & Cafés</li><li>Cleaning staff</li>",
+      type_specialized_title: "Specialized Workforce",
+      type_specialized_list: "<li>Engineers</li><li>Accountants</li><li>Site Supervisors</li>",
+
+      legal_title: "Our Legal Procedures",
+      legal_list: `
+        <li>Compliance with all laws and regulations.</li>
+        <li>Contract authentication.</li>
+        <li>Approved medical examinations.</li>
+        <li>Visa processing.</li>
+        <li>Coordination with embassies.</li>
+      `,
+
+      stats_title: "Numbers & Achievements",
+      stat_1: "Workers placed abroad",
+      stat_2: "International entities served",
+      stat_3: "Customer satisfaction rate",
+
+      steps_title: "How We Work With You",
+      steps_list: `
+        <li>Receive the employer request.</li>
+        <li>Define the country and occupation.</li>
+        <li>Select suitable candidates.</li>
+        <li>Conduct interviews.</li>
+        <li>Complete procedures and travel.</li>
+        <li>Follow-up after arrival.</li>
+      `,
+
+      partners_title: "Our Partners",
+      partners_text: 'We are proud to cooperate with major entities, including <strong>UCC</strong> and the <strong>Mashwar</strong> restaurant chain.',
+
+      note_title: "Notice",
+      note_text: "All procedures are handled according to employer requirements and the official regulations of the destination country.",
+
+      footer_about: "A company specialized in Egyptian manpower recruitment abroad, providing nomination, data organization, coordination, and follow-up solutions tailored to employer needs.",
+      quick_links: "Quick Links",
+      contact_info: "Contact Information"
+    }
+  };
+
+  function applyI18n(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
+
+    const bs = document.getElementById("bsCss");
+    bs.href = (lang === "ar")
+      ? "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      : "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+
+    document.title = translations[lang].page_title;
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      const val = translations[lang][key];
+      if (val !== undefined) el.textContent = val;
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach(el => {
+      const key = el.getAttribute("data-i18n-html");
+      const val = translations[lang][key];
+      if (val !== undefined) el.innerHTML = val;
+    });
+
+    document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+      const pairs = el.getAttribute("data-i18n-attr").split(",");
+      pairs.forEach(p => {
+        const [attr, key] = p.split(":").map(s => s.trim());
+        const val = translations[lang][key];
+        if (attr && key && val !== undefined) el.setAttribute(attr, val);
+      });
+    });
+
+    const btn = document.getElementById("langToggle");
+    if (btn) btn.textContent = (lang === "ar") ? "EN" : "AR";
+
+    localStorage.setItem("site_lang", lang);
+  }
+
+  applyI18n(localStorage.getItem("site_lang") || "ar");
+
+  document.getElementById("langToggle")?.addEventListener("click", () => {
+    const current = document.documentElement.lang || "ar";
+    applyI18n(current === "ar" ? "en" : "ar");
+  });
+</script>
 
 </body>
 </html>
